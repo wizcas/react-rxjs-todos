@@ -1,43 +1,30 @@
-import { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div className="mx-auto w-[40ch] max-w-[90vw] py-4">
+      <header></header>
+      <main className="flex flex-col gap-4 items-stretch">
+        <section
+          aria-label="input a todo item"
+          className="flex flex-row gap-2 items-center"
+        >
+          <input
+            type="text"
+            placeholder="What's your next task?"
+            className="flex-1"
+          />
+          <button type="submit">+</button>
+        </section>
+        <section aria-label="the todo list">
+          <ul>
+            <li>
+              <label className="space-x-2">
+                <input type="checkbox" />
+                <span>Something I'd like to do.</span>
+              </label>
+            </li>
+          </ul>
+        </section>
+      </main>
     </div>
   );
 }
